@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "repository": "brunnojob/java-offshore-alarm-cascade-correlator",
-  "source_commit": "4f0bc71f9c7d87987c0e49068fb79893717d1f63",
-  "generated_at": "2026-10-10T02:36:05.371301+00:00",
-  "run_url": "https://github.com/brunnojob/java-offshore-alarm-cascade-correlator/actions/runs/38017554598",
+  "source_commit": "ec97ad780c967de064bd62ea40026974584298f9",
+  "generated_at": "2026-10-10T02:44:18.439928+00:00",
+  "run_url": "https://github.com/brunnojob/java-offshore-alarm-cascade-correlator/actions/runs/38018045160",
   "inputs_sha256": {
     ".proof/scenarios.json": "8bc38bb050198ea221bf3214a13b87d83e651bd6a4b4019786db559ee7632ed0",
     "examples/input.txt": "bd61e28ffd6929409618957f7155accfd2616a3e8c2539bc991d74baf8226d31"
@@ -23,7 +23,7 @@
       "exit": 0,
       "expected_exit": 0,
       "passed": true,
-      "seconds": 1.506,
+      "seconds": 2.96,
       "output": "tests passed\nroot=MCC-loss,time=0.000,count=4,members=MCC-loss|pump-trip|low-flow|low-pressure\nroot=high-temperature,time=12.000,count=1,members=high-temperature\n",
       "output_sha256": "7235dc3e6a019ca476bec182bf25a67a5a9659aaa8cfda85e093058887275014"
     },
