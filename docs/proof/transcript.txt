@@ -1,0 +1,20 @@
+$ bash -e -o pipefail -c javac Main.java && java Main --self-test && java Main < examples/input.txt
+tests passed
+root=MCC-loss,time=0.000,count=4,members=MCC-loss|pump-trip|low-flow|low-pressure
+root=high-temperature,time=12.000,count=1,members=high-temperature
+
+$ java Main
+root=MCC-loss,time=0.000,count=4,members=MCC-loss|pump-trip|low-flow|low-pressure
+root=high-temperature,time=12.000,count=1,members=high-temperature
+
+$ java Main
+missing input
+
+$ java Main
+invalid CSV row
+
+$ java Main --unsupported
+unsupported command arguments
+
+$ java Main
+input record too large

@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "repository": "brunnojob/java-offshore-alarm-cascade-correlator",
+  "source_commit": "4f0bc71f9c7d87987c0e49068fb79893717d1f63",
+  "generated_at": "2026-10-10T02:36:05.371301+00:00",
+  "run_url": "https://github.com/brunnojob/java-offshore-alarm-cascade-correlator/actions/runs/38017554598",
+  "inputs_sha256": {
+    ".proof/scenarios.json": "8bc38bb050198ea221bf3214a13b87d83e651bd6a4b4019786db559ee7632ed0",
+    "examples/input.txt": "bd61e28ffd6929409618957f7155accfd2616a3e8c2539bc991d74baf8226d31"
+  },
+  "cases": [
+    {
+      "display": false,
+      "name": "javac Main.java && java Main --self-test && java Main < examples/input.txt",
+      "argv": [
+        "bash",
+        "-e",
+        "-o",
+        "pipefail",
+        "-c",
+        "javac Main.java && java Main --self-test && java Main < examples/input.txt"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "seconds": 1.506,
+      "output": "tests passed\nroot=MCC-loss,time=0.000,count=4,members=MCC-loss|pump-trip|low-flow|low-pressure\nroot=high-temperature,time=12.000,count=1,members=high-temperature\n",
+      "output_sha256": "7235dc3e6a019ca476bec182bf25a67a5a9659aaa8cfda85e093058887275014"
+    },
+    {
+      "display": true,
+      "name": "Application demonstration with checked output",
+      "argv": [
+        "java",
+        "Main"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "seconds": 0.101,
+      "output": "root=MCC-loss,time=0.000,count=4,members=MCC-loss|pump-trip|low-flow|low-pressure\nroot=high-temperature,time=12.000,count=1,members=high-temperature\n",
+      "output_sha256": "9a9a442de071c1dd6556c559101c6a63c2c92751014375d1d508ab7c452ab9da"
+    },
+    {
+      "display": true,
+      "name": "Reject an empty capture",
+      "argv": [
+        "java",
+        "Main"
+      ],
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "seconds": 0.051,
+      "output": "missing input\n",
+      "output_sha256": "e108e9abb244623e01f96efedd4006bbb9cdf4b61840b948d6bf644ffe78bede"
+    },
+    {
+      "display": true,
+      "name": "Reject malformed input",
+      "argv": [
+        "java",
+        "Main"
+      ],
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "seconds": 0.051,
+      "output": "invalid CSV row\n",
+      "output_sha256": "902887621d4e2b50e9a1d45937529644e6685110db02e63076a49a6f646fbe0c"
+    },
+    {
+      "display": true,
+      "name": "Reject unsupported invocation",
+      "argv": [
+        "java",
+        "Main",
+        "--unsupported"
+      ],
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "seconds": 0.051,
+      "output": "unsupported command arguments\n",
+      "output_sha256": "8671e08a3718f115decd7eb1e7970691e3a2180c5a869d0e9ccd54e6d4fa8a80"
+    },
+    {
+      "display": true,
+      "name": "Reject an oversized input record",
+      "argv": [
+        "java",
+        "Main"
+      ],
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "seconds": 0.051,
+      "output": "input record too large\n",
+      "output_sha256": "d0f1bb9ab1c99d914df3de66c3268650fd8fcb942b2d0f116490dc6c41e6f800"
+    }
+  ],
+  "passed": true
+}
